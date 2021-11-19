@@ -99,10 +99,14 @@
     async function main() {
       console.log(liff)
       liff.init({ liffId: "1656644320-EkePoKv4" }).then(() => {
+        console.log('then')
+
         document.getElementById("isLoggedIn").append(liff.isLoggedIn())
         getEnvironment()
         getUserProfile()
       }).catch(() => {
+        console.log('catch')
+
         liff.login()
       })
 
