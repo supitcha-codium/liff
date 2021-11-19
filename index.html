@@ -99,7 +99,11 @@
     async function main() {
       console.log(liff)
       liff.init({ liffId: "1656644320-EkePoKv4" }).then(() => {
-        liff.login()
+        console.log(liff.isLoggedIn());
+
+        if (!liff.isLoggedIn()) {
+          liff.login()
+        }
 
         console.log('then')
 
