@@ -79,7 +79,6 @@
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
-      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
     }
 
     function getEnvironment() {
@@ -99,6 +98,7 @@
 
     async function main() {
       console.log(liff)
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       await liff.init({ liffId: "1656644320-EkePoKv4" })
       getEnvironment()
       getUserProfile()
