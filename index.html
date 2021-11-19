@@ -98,8 +98,8 @@
 
     async function main() {
       console.log(liff)
-      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       await liff.init({ liffId: "1656644320-EkePoKv4" })
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
       getEnvironment()
       getUserProfile()
       // getContext()
