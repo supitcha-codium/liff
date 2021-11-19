@@ -98,10 +98,14 @@
 
     async function main() {
       console.log(liff)
-      await liff.init({ liffId: "1656644320-EkePoKv4" })
-      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
-      getEnvironment()
-      getUserProfile()
+      liff.init({ liffId: "1656644320-EkePoKv4" }).then(() => {
+        document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+        getEnvironment()
+        getUserProfile()
+      }).catch(() => {
+        liff.login()
+      })
+
       // getContext()
       // getFriendship()
       // createUniversalLink()
